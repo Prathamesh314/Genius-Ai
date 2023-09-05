@@ -1,7 +1,4 @@
 import React from 'react';
-import { Button } from '@/components/ui/button'; // Check the path to Button
-import { Link } from 'lucide-react';
-import { link } from 'fs';
 
 const LandingPage = () => {
   return (
