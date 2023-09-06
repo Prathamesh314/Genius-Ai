@@ -3,7 +3,7 @@
 import axios from "axios";
 import * as z from "zod";
 import Heading from '@/components/heading'
-import { MessageSquare } from 'lucide-react'
+import { ImageIcon } from 'lucide-react'
 import React,{ useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { formSchema } from "./constants";
@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 import UserAvatar from "@/components/user-avatar";
 import BotAvatar from "@/components/bot-avatar";
 
-const ConversationPage = () => {
+const ImagePage = () => {
 
   const router = useRouter();
   const [message, setMessage] = useState<ChatCompletionRequestMessage[]>([]);
@@ -41,7 +41,7 @@ const ConversationPage = () => {
           content: values.prompt
         }
         const newMessages = [...message, userMessage]
-        const response = await axios.post("/api/conversation", {
+        const response = await axios.post("/api/image", {
           message: newMessages
         });
 
@@ -56,9 +56,9 @@ const ConversationPage = () => {
   return (
     <div>
         <Heading
-        title= "Conversation"
-        description= "This is the most advanced AI bot for conversation"
-        icon= {MessageSquare}
+        title= "Image Generation"
+        description= "Turn your prompt into an Image"
+        icon= {ImageIcon}
         iconColor='text-violet-500'
         bgColor='bg-violet-500/10'
         />
@@ -116,4 +116,4 @@ const ConversationPage = () => {
   )
 }
 
-export default ConversationPage
+export default ImagePage
