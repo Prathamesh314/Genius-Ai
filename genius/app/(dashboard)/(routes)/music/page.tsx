@@ -3,7 +3,7 @@
 import axios from "axios";
 import * as z from "zod";
 import Heading from '@/components/heading'
-import { Download, ImageIcon } from 'lucide-react'
+import { Download, Music } from 'lucide-react'
 import React,{ useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { amountOptions, formSchema, resolutionOptions } from "./constants";
@@ -53,11 +53,11 @@ const ImagePage = () => {
   return (
     <div>
         <Heading
-        title= "Image Generation"
-        description= "Turn your prompt into an Image"
-        icon= {ImageIcon}
-        iconColor='text-pink-700'
-        bgColor='bg-pink-700/10'
+        title= "Music"
+        description= "Generate music for you"
+        icon= {Music}
+        iconColor='text-emerald-700'
+        bgColor='bg-emerald-700/10'
         />
         <div>
           <Form {...form}>
